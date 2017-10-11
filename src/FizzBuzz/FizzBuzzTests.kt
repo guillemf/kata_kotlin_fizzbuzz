@@ -13,13 +13,17 @@ class FizzBuzzTests {
         assertThat(fizzBuzzOf(5), `is`("Buzz"))
         assertThat(fizzBuzzOf(9), `is`("Fizz"))
         assertThat(fizzBuzzOf(10), `is`("Buzz"))
+        assertThat(fizzBuzzOf(15), `is`("FizzBuzz"))
     }
 
     private fun  fizzBuzzOf(n: Int): String {
+        var result: String = ""
 
-        if (n % 3 == 0) return "Fizz"
-        if (n % 5 == 0) return "Buzz"
+        if (n % 3 == 0) result += "Fizz"
+        if (n % 5 == 0) result += "Buzz"
 
-        return n.toString()
+        if (result.length == 0) result = n.toString()
+
+        return result
     }
 }
